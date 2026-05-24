@@ -1,1 +1,29 @@
+pipeline {
+    agent any
 
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/albertotaulani-blip/testing.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'BUILD OK'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'TEST OK'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'DEPLOY OK'
+            }
+        }
+    }
+}
